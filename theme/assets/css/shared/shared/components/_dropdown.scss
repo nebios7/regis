@@ -1,0 +1,24 @@
+/* Dropdowns */
+
+.dropdown {
+  .dropdown-toggle {
+    &:after {
+      vertical-align: middle;
+      margin-left: 9px;
+    }
+    &.arrow-disabled {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  font-size: $default-font-size;
+  .dropdown-item {
+    &:active {
+      background: initial;
+    }
+  }
+}

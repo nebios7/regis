@@ -1,0 +1,69 @@
+/* Cards */
+
+.card {
+  border: 1px solid $border-color;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+  .card-header {
+    background: $white;
+    padding: $card-padding-y $card-padding-x;
+    border-bottom: 1px solid $border-color;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    small {
+      margin-bottom: 0px;
+    }
+    &.header-sm {
+      padding: 15px $card-padding-x;
+      height: 60px;
+      p,
+      .dropdown .dropdown-toggle i {
+        color: $text-muted;
+      }
+    }
+  }
+  .card-body {
+    padding: $card-padding-y $card-padding-x;
+    &.no-gutter {
+      padding: 0;
+    }
+    +.card-body {
+      padding-top: 0;
+    }
+  }
+  &.card-outline-success {
+    border: 1px solid theme-color("success");
+  }
+  &.card-outline-primary {
+    border: 1px solid theme-color("primary");
+  }
+  &.card-outline-warning {
+    border: 1px solid theme-color("warning");
+  }
+  &.card-outline-danger {
+    border: 1px solid theme-color("danger");
+  }
+  &.card-rounded {
+    border-radius: 5px;
+  }
+  &.card-faded {
+    background: #b5b0b2;
+    border-color: #b5b0b2;
+  }
+  &.card-circle-progress {
+    color: $white;
+    text-align: center;
+  }
+}
+
+@each $color,
+$value in $theme-colors {
+  .card-inverse-#{$color} {
+    @include card-inverse-variant(rgba(theme-color($color), .2), theme-color-level($color, 1), theme-color-level($color, 3));
+  }
+}
